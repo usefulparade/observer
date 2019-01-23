@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+}
+
+.p5Canvas{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+}
+
+.mainContainer{
+    display: block;
+    position: relative;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotateY(180deg);
+    opacity: 0.6;
+}
+
+.icon{
+    display: inline-block;
+    position: relative;
+    margin: 30px;
+}
+
+.music {
+    display: none;
+    position: fixed;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
