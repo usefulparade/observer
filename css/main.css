@@ -1,5 +1,85 @@
+@media only screen and (min-width: 600px){
+    .social-media-row {
+        /* padding: 22px; */
+        max-width: 600px;
+        padding-left: 5%;
+    }
+    
+    .social-media-row-icon {
+        width: 23%;
+    }
+
+    .social-media-row img{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px){
+    .social-media-row {
+        max-width: 600px;
+        padding-left: 5%;
+    }
+
+    .social-media-row-icon {
+        width: 23%;
+    }
+
+    .social-media-row img{
+       max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1300px){
+    .wist-left {
+        display: block;
+    }
+    .wist-right {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1299px){
+    .wist-left {
+        display: none;
+    }
+    .wist-right {
+        display: none;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 3em;
+}
+
+h6 {
+    margin-top: 4px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
 body {
     background-color: black;
+}
+
+div {
+    transition: all 0.15s ease;
+    will-change: transform;
 }
 
 .p5Canvas{
@@ -12,24 +92,228 @@ body {
 .mainContainer{
     display: block;
     position: relative;
-    max-width: 550px;
+    max-width: 600px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     transform: rotateY(180deg);
+    z-index: 0;
     opacity: 0.6;
 }
 
-.icon{
-    display: inline-block;
-    position: relative;
-    margin: 30px;
+.status-left {
+    display: block;
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    width: 50%;
+}
+.status-left i {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.status-middle {
+    display: block;
+    position: fixed;
+    top: 25px;
+    width: 100%;
+    text-align: middle;
+}
+
+.status-right {
+    display: block;
+    position: fixed;
+    top: 25px;
+    right: 10px;
+}
+.status-right i {
+    align-content: right;
+}
+
+.app-title {
+    display: block;
+    width: 100%;
+    padding-left: 8%;
+    padding-top: 5%;
 }
 
 .music {
-    display: none;
+    display: block;
     position: fixed;
-    margin-top: 50%;
+    margin-top: 35px;
+    left: 5%;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(0);
+    width: 90%;
+    height: 75%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.music iframe {
+    max-width: 100%;
+}
+
+.messages {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 5%;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(0);
+    width: 90%;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.a {
+    background-color: lightblue;
+    display: block;
+    position: relative;
+    width: 60%;
+    float: right;
+    padding: 10px;
+    margin: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    
+}
+.a p {
+    font-size: 18px;
+    text-align: left;
+}
+.b {
+    background-color: gray;
+    display: block;
+    position: relative;
+    width: 60%;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+}
+.b p {
+    font-size: 18px;
+    text-align: left;
+}
+
+.media {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 5%;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(0);
+    max-width: 90%;
+    max-height: 85%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.media iframe {
+    max-width: 100%;
+}
+
+.calendar {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 5%;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(0);
+    width: 90%;
+    height: 85%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.songkick-widget {
+    width: 550px;
+}
+
+.social-media-row {
+    display: block;
+    position: fixed;
+    height: 110px;
+    background-color: rgb(50, 50, 50);
+    bottom: 100px;
+    padding-top: 5px;
+}
+
+.social-media-row-icon {
+    display: inline-block;
+    position: relative;
+    align-content: center;
+    /* margin-left: 18px; */
+    /* margin-right: 18px; */
+}
+
+.social-media-row img {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    /* max-width: 100px; */
+}
+
+.bottom-black {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -400px;
+    height: 100px;
+    width: 800px;
+    /* background-color: black; */
+    background-image: url("../img/bottom-painted.png");
+    z-index: 90;
+}
+
+.wist-left {
+    position: fixed;
+    top: 10%;
+    left: 0px;
+    height: 100%;
+    width: 28%;
+    transform: rotateY(180deg);
+}
+.wist-left img {
+    max-width: 100%;
+}
+
+.wist-right {
+    position: fixed;
+    top: 10%;
+    right: 0px;
+    height: 100%;
+    width: 28%;
+    
+}
+.wist-right img {
+    max-width: 100%;
+}
+
+.home-button {
+    display: block;
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    margin-left: -40px;
+    left: 50%;
+    bottom: 10px;
+    z-index: 100;
+    background-color: rgb(0, 0, 0);
+    border-radius: 40px;
+}
+
+.home-button:focus {
+    outline: 0;
 }
