@@ -15,7 +15,7 @@ var icons = [];
 var anAppIsActive;
 
 var musicApp, messagesApp, mediaApp, calendarApp;
-var socialRow;
+var socialRow, statusBar, htmlContainer;
 var apps = [];
 
 var homeButton;
@@ -23,36 +23,50 @@ var homeButton;
 var d, minutes, hours;
 var statusTime;
 
-var painting1, painting2;
+var painting1, painting2, painting3;
+
+var canv;
 
 function preload() {
     painting1 = loadImage('./img/painting4.png');
     painting2 = loadImage('./img/painting5.png');
+    painting3 = loadImage('./img/bottom-painted.png');
 }
 
 function setup() {
 
-    var canv = createCanvas(windowWidth, windowHeight);
+    canv = createCanvas(windowWidth, windowHeight);
     canv.parent('canv');
-
+    canv.style('z-index', 0);
     doTime();
 
-    vid = createVideo('img/loop.mp4');
+    vid = createVideo(['img/phoneloop2-360p.mp4'], vidLoad);
     vid.volume(0);
     vid.elt.muted = true;
+    vid.elt.setAttribute("muted", "true");
+    vid.elt.setAttribute("autoplay", "true");
+    vid.elt.setAttribute("playsinline", "true");
     vid.loop();
     vid.hide();
+
     if (height > 600){
         vidSize = new p5.Vector(height*1.2, height);
     } else {
         vidSize = new p5.Vector(720, 600);
     }
 
-    if (width > 600){
-        containerHalfWidth = 300;
+    if (height > 800){
+        if (width > 500){
+            containerHalfWidth = 250;
+        } else {
+            containerHalfWidth = width*0.5;
+        }
     } else {
-        containerHalfWidth = width/2;
+        containerHalfWidth = height * 0.3;
     }
+
+    containerHalfWidth = constrain(containerHalfWidth, 0, width*0.5);
+
     halfWidth = width/2;
     halfHeight = height/2;
     rightEdge = halfWidth + containerHalfWidth;
@@ -61,42 +75,35 @@ function setup() {
     anAppIsActive = false;
 
     positions();
-    iconPositions[0] = new p5.Vector (rightEdge - containerHalfWidth*0.3, containerHalfWidth*0.4);
-    iconPositions[1] = new p5.Vector (rightEdge - containerHalfWidth*0.77, containerHalfWidth*0.4);
-    iconPositions[2] = new p5.Vector (leftEdge + containerHalfWidth*0.77, containerHalfWidth*0.4);
-    iconPositions[3] = new p5.Vector (leftEdge + containerHalfWidth*0.3, containerHalfWidth*0.4);
-    iconPositions[4] = new p5.Vector (rightEdge - containerHalfWidth*0.3, containerHalfWidth*0.87);
-    iconPositions[5] = new p5.Vector (rightEdge - containerHalfWidth*0.77, containerHalfWidth*0.87);
-    iconPositions[6] = new p5.Vector (leftEdge + containerHalfWidth*0.77, containerHalfWidth*0.87);
     for (i=0;i<4;i++){
         icons[i] = new Icon(iconPositions[i].x, iconPositions[i].y, i);
-        // if (width > 600){
-        //     icons[i].smallSize = new p5.Vector (100, 100);
-        // } else {
-        //     icons[i].smallSize = new p5.Vector (width/6, width/6);
-        // }
     }
-    sizes();
-    
 
     musicApp = select('.music');
     messagesApp = select('.messages');
     mediaApp = select('.media');
     calendarApp = select('.calendar');
     socialRow = select('.social-media-row');
+    htmlContainer = select('.mainContainer');
+    
     apps[0] = musicApp;
     apps[1] = messagesApp;
     apps[2] = mediaApp;
     apps[3] = calendarApp;
 
+    sizes();
+
     homeButton = select('.home-button');
     homeButton.mousePressed(homeButtonPressed);
+    
 }
 
 function draw() {
     strokeWeight(5);
     imageMode(CENTER);
+    //background(0, 0, 0);
     image(vid, halfWidth, halfHeight, vidSize.x, vidSize.y);
+    //image(painting2, halfWidth, halfHeight, vidSize.x, vidSize.y);
 
     for (i=0;i<icons.length;i++){
         icons[i].show();
@@ -127,13 +134,17 @@ function positions(){
     var dist3 = 40 + int(containerHalfWidth*0.3);
     var dist4 = 40 + int(containerHalfWidth*0.77);
     
-    console.log(dist1, dist2, dist3, dist4);
-
-    if (windowWidth > 600){
-        containerHalfWidth = 300;
+    if (height > 800){
+        if (width > 500){
+            containerHalfWidth = 250;
+        } else {
+            containerHalfWidth = width*0.5;
+        }
     } else {
-        containerHalfWidth = width*0.5;
+        containerHalfWidth = height * 0.3;
     }
+
+    containerHalfWidth = constrain(containerHalfWidth, 0, width*0.5);
 
     // icons are re-positioned
     iconPositions[0] = new p5.Vector (rightEdge - dist1, dist3);
@@ -149,40 +160,36 @@ function positions(){
 
 function sizes(){
     // icons are re-sized
-    var smallSize = int(width*0.166);
+    var smallSize = int(containerHalfWidth * 0.322);
 
     for (i=0;i<icons.length;i++){
-        if (width > 600){
-            icons[i].smallSize = new p5.Vector (100, 100);
-        } else {
-            icons[i].smallSize = new p5.Vector (smallSize, smallSize);
-        }
+        icons[i].smallSize = new p5.Vector (smallSize, smallSize);
+    
 
         icons[i].bigSize = new p5.Vector (containerHalfWidth*2, height);
         icons[i].rounded = icons[i].smallSize.x*0.2;
         icons[i].initialPos = iconPositions[i];
         icons[i].centerPos = new p5.Vector(halfWidth, halfHeight);
+    }
         
-    }
+    htmlContainer.style('max-width:' +  containerHalfWidth*2 + "px; ");
 
-    if (height > 600){
-        vidSize = new p5.Vector(height*1.2, height);
-    } else {
-        vidSize = new p5.Vector(720, 600);
-    }
+
+    vidSize = new p5.Vector(constrain(height*1.2, 0, 5000), constrain(height, 0, 5000));
+
 }
 
 function phoneFrame(){
     //BLACK RECTANGLES
     push();
         rectMode(CORNER);
-        fill(1,3,15);
         noStroke();
-        rect(0, 0, halfWidth - containerHalfWidth, height);
-        fill(1,5,9);
-        rect(halfWidth + containerHalfWidth, 0, halfWidth - containerHalfWidth, height);
+        // fill(1,3,15);
+        // rect(0, 0, halfWidth - containerHalfWidth, height);
+        // fill(1,5,9);
+        // rect(halfWidth + containerHalfWidth, 0, halfWidth - containerHalfWidth, height);
         fill(3,3,12);
-        rect(halfWidth -containerHalfWidth, 0, halfWidth + containerHalfWidth, 20);
+        // rect(halfWidth -containerHalfWidth, 0, halfWidth + containerHalfWidth, 20);
     pop();
 
     //STATUS BAR
@@ -192,43 +199,25 @@ function phoneFrame(){
         noStroke();
         rect(leftEdge, 20, containerHalfWidth*2, 25);
     pop();
-
-    //HOME BUTTON
-
-    // push();
-    //     rectMode(CENTER);
-    //     fill(0,0,0, 210);
-    //     noStroke();
-    //     ellipse(halfWidth, height - 50, 80, 80);
-    // pop();
-
-    //ROUNDED CORNERS OF PHONE
-
-    // push();
-    //     rectMode(CENTER);
-    //     fill(0,0,0);
-    //     noStroke();
-    //     rect(halfWidth, height-50, containerHalfWidth*2, 100);
-    // pop();
-    // push();
-    //     rectMode(CENTER);
-    //     noFill();
-    //     stroke(0, 0, 0);
-    //     strokeWeight(20);
-    //     rect(halfWidth, halfHeight, containerHalfWidth*2, height, 50);
-    // pop();
 }
 
 function backgroundPainting(){
     var leftWidth = ((width - (containerHalfWidth*2))/2);
     var rightPos = ((width*0.5 + (containerHalfWidth)));
-    if (width > 600){
+    if (containerHalfWidth < windowWidth*0.5){
         push();
             imageMode(CORNER);
             image(painting1, 0, 0, leftWidth, height);
             image(painting2, rightPos, 0, leftWidth, height);
+            
         pop();
     }
+
+    push();
+        imageMode(CENTER);
+        //image(painting3, width*0.5, -30, 600, 100);
+    pop();
+
 }
 
 function touchStarted(){
@@ -293,8 +282,14 @@ function doTime(){
     // statusTime.parent('time');
 }
 
-function expandApp(){
-   
+function vidLoad(){
+    vid.volume(0);
+    vid.elt.muted = true;
+    vid.elt.setAttribute("muted", "true");
+    vid.elt.setAttribute("autoplay", "true");
+    vid.elt.setAttribute("playsinline", "true");
+    vid.loop();
+    vid.hide();
 }
 
 function homeButtonPressed(){

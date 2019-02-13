@@ -10,45 +10,47 @@
     <script src="js/p5.min.js"></script>
     <script src="js/p5.dom.min.js"></script>
     <script src="js/p5.sound.min.js"></script>
-    <script src="js/behind-sketch.js"></script>
     <script src="js/icon.js"></script>
+    <script src="js/behind-sketch.js"></script>
+    
     
   </head>
   <body>
-    <div class="p5Canvas">
-      <div id="canv" class="p5Canvas"></div>
-    </div>
+    <div id="canv" class="p5Canvas"></div>
 
     <div class="mainContainer">
-
+    <div class="status-bar">
       <div class="status-left">
-          <i class="fas fa-signal"></i><i class="fas fa-wifi"></i>
+          <i class="fas fa-signal"></i>
+          <h6>WISTNET</h6>
+          <i class="fas fa-wifi"></i>
+          <h6>LTE</h6>
       </div>
       <div class="status-middle">
         <h6 id="time"></h6>
       </div>
 
       <div class="status-right">
+          <h6>28%</h6>
           <i class="fas fa-battery-quarter"></i>
       </div>
-
+    </div>
 
       <div class="music">
           <div class="app-title">
             <h1>MUSIC</h1>
           </div>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1456362300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/overflowed">Overflowed by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1621627042/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/craziest-of-treats">Craziest Of Treats by Wistappear</a></iframe>
+    
+          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>
+          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=4235794114/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/good-sign-bad-sign">Good Sign, Bad Sign by Wistappear</a></iframe>
+          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=1456362300/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/overflowed">Overflowed by Wistappear</a></iframe>
+          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=1621627042/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/craziest-of-treats">Craziest Of Treats by Wistappear</a></iframe>
+ 
+          <!-- <iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe> -->
           <!-- <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>   
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>  
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>   -->
+          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1456362300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/overflowed">Overflowed by Wistappear</a></iframe>
+          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1621627042/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/craziest-of-treats">Craziest Of Treats by Wistappear</a></iframe> -->
+          
       </div>
 
       <div class="messages">
@@ -74,7 +76,7 @@
 
       <div class="media">
         <div class="app-title">
-          <h1>PHOTO & VIDEO</h1>
+          <h1>MEDIA</h1>
         </div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/mBu4Vsfq0j8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -126,8 +128,14 @@
       
     </div>
     
-    <div class="bottom-black"></div>
-    <button class="home-button">
+    <div class="top-black">
+      
+    </div>
+
+    <div class="bottom-black">
+      <button class="home-button"></button>
+    </div>
+    
     </button>
 
     <div class="wist-left">

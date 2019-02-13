@@ -12,6 +12,18 @@
     .social-media-row img{
         max-width: 80%;
     }
+
+    .status-bar {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h6 {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 599px){
@@ -27,6 +39,18 @@
     .social-media-row img{
        max-width: 80%;
     }
+
+    .status-bar {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (min-width: 1300px){
@@ -38,12 +62,60 @@
     }
 }
 
-@media only screen and (max-width: 1299px){
+@media only screen and (max-width: 1099px){
     .wist-left {
         display: none;
     }
     .wist-right {
         display: none;
+    }
+}
+
+@media only screen and (min-height: 499px){
+    .bottom-black {
+        height: 100px;
+        width: 800px;
+        margin-left: -400px;
+    }
+
+    .top-black {
+
+        width: 800px;
+        margin-left: -400px;
+    }
+
+    .home-button {
+        height: 80px;
+        width: 80px;
+        margin-left: -40px;
+        bottom: 10px;
+    }
+    .social-media-row {
+        bottom: 100px;
+    }
+}
+
+@media only screen and (max-height: 500px){
+    .bottom-black {
+        height: 50px;
+        width: 400px;
+        margin-left: -200px;
+    }
+
+    .top-black {
+        width: 400px;
+        margin-left: -200px;
+    }
+
+    .home-button {
+        height: 40px;
+        width: 40px;
+        margin-left: -20px;
+        bottom: 5px;
+    }
+
+    .social-media-row {
+        bottom: 50px;
     }
 }
 
@@ -58,14 +130,15 @@ html, body {
 h1 {
     font-family: sans-serif;
     text-align: left;
-    font-size: 3em;
+    font-weight: lighter;
 }
 
 h6 {
-    margin-top: 4px;
+    margin-top: 3px;
     font-family: sans-serif;
     text-align: center;
-    font-size: 12px;
+    font-style: none;
+    font-weight: lighter;
 }
 
 p {
@@ -83,23 +156,40 @@ div {
 }
 
 .p5Canvas{
+    display: block;
     position: fixed;
     left: 0px;
     top: 0px;
-    z-index: -100;
+    z-index: 1;
+}
+
+.p5Canvas canvas{
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
 }
 
 .mainContainer{
     display: block;
     position: relative;
-    max-width: 600px;
+    max-width: 0px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    transform: rotateY(180deg);
-    z-index: 0;
+    transform: scale(-1, 1);
+    z-index: 1000;
     opacity: 0.6;
+    background-image: url('../img/glass-texture.png');
+    background-size: cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center top;
 }
+
+/* .status-bar {
+    font-size: 12px;
+} */
 
 .status-left {
     display: block;
@@ -107,10 +197,16 @@ div {
     top: 25px;
     left: 10px;
     width: 50%;
+    z-index: 1000;
 }
 .status-left i {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    z-index: 1000;
+}
+.status-left h6 {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 5px;
 }
 
 .status-middle {
@@ -119,6 +215,7 @@ div {
     top: 25px;
     width: 100%;
     text-align: middle;
+    z-index: 1000;
 }
 
 .status-right {
@@ -126,9 +223,16 @@ div {
     position: fixed;
     top: 25px;
     right: 10px;
+    z-index: 1000;
 }
 .status-right i {
     align-content: right;
+    z-index: 1000;
+}
+.status-right h6 {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 5px;
 }
 
 .app-title {
@@ -142,18 +246,22 @@ div {
     display: block;
     position: fixed;
     margin-top: 35px;
-    left: 5%;
-    z-index: 0;
     opacity: 0;
     transform: scale(0);
-    width: 90%;
+    width: 100%;
     height: 75%;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1000;
 }
 
 .music iframe {
-    max-width: 100%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 75%;
 }
 
 .messages {
@@ -161,13 +269,13 @@ div {
     position: fixed;
     margin-top: 25px;
     left: 5%;
-    z-index: 0;
     opacity: 0;
     transform: scale(0);
     width: 90%;
     height: 85%;
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1000;
 }
 .a {
     background-color: lightblue;
@@ -181,11 +289,13 @@ div {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 20px;
+    z-index: 1000;
     
 }
 .a p {
     font-size: 18px;
     text-align: left;
+    z-index: 1000;
 }
 .b {
     background-color: gray;
@@ -199,10 +309,12 @@ div {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 0px;
+    z-index: 1000;
 }
 .b p {
     font-size: 18px;
     text-align: left;
+    z-index: 1000;
 }
 
 .media {
@@ -210,16 +322,18 @@ div {
     position: fixed;
     margin-top: 25px;
     left: 5%;
-    z-index: 0;
     opacity: 0;
     transform: scale(0);
     max-width: 90%;
     max-height: 85%;
     overflow-y: hidden;
     overflow-x: hidden;
+    z-index: 1000;
 }
 .media iframe {
     max-width: 100%;
+    z-index: 1000;
+    overflow: hidden;
 }
 
 .calendar {
@@ -227,32 +341,35 @@ div {
     position: fixed;
     margin-top: 25px;
     left: 5%;
-    z-index: 0;
     opacity: 0;
     transform: scale(0);
     width: 90%;
     height: 85%;
     overflow-y: hidden;
     overflow-x: hidden;
+    z-index: 1000;
 }
 
 .songkick-widget {
     width: 550px;
+    z-index: 1000;
 }
 
 .social-media-row {
     display: block;
     position: fixed;
-    height: 110px;
-    background-color: rgb(50, 50, 50);
-    bottom: 100px;
+    height: auto;
+    background-image: linear-gradient(rgb(65,65,65), rgb(72, 72, 72), rgb(33, 33, 33));
+    /* background-color: rgb(10, 10, 10); */
     padding-top: 5px;
+    z-index: 1000;
 }
 
 .social-media-row-icon {
     display: inline-block;
     position: relative;
     align-content: center;
+    z-index: 1000;
     /* margin-left: 18px; */
     /* margin-right: 18px; */
 }
@@ -261,6 +378,7 @@ div {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    z-index: 1000;
     /* max-width: 100px; */
 }
 
@@ -269,12 +387,25 @@ div {
     position: fixed;
     bottom: 0px;
     left: 50%;
-    margin-left: -400px;
-    height: 100px;
-    width: 800px;
-    /* background-color: black; */
+    background-size: contain;
     background-image: url("../img/bottom-painted.png");
-    z-index: 90;
+    z-index: 2000;
+}
+
+.bottom-black img {
+    max-width: 100%;
+}
+
+.top-black {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../img/bottom-painted.png");
+    z-index: 2000;
 }
 
 .wist-left {
@@ -283,7 +414,8 @@ div {
     left: 0px;
     height: 100%;
     width: 28%;
-    transform: rotateY(180deg);
+    transform: scale(-1, 1);
+    z-index: 500;
 }
 .wist-left img {
     max-width: 100%;
@@ -295,7 +427,7 @@ div {
     right: 0px;
     height: 100%;
     width: 28%;
-    
+    z-index: 500;
 }
 .wist-right img {
     max-width: 100%;
@@ -304,12 +436,8 @@ div {
 .home-button {
     display: block;
     position: fixed;
-    height: 80px;
-    width: 80px;
-    margin-left: -40px;
     left: 50%;
-    bottom: 10px;
-    z-index: 100;
+    z-index: 3000;
     background-color: rgb(0, 0, 0);
     border-radius: 40px;
 }

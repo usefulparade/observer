@@ -2,11 +2,7 @@ function Icon(x, y, ind){
     this.initialPos = new p5.Vector(x, y);
     this.centerPos = new p5.Vector(halfWidth, halfHeight);
     this.actualPos = this.initialPos;
-    if (width > 600){
-        this.smallSize = new p5.Vector(100, 100);
-    } else {
-        this.smallSize = new p5.Vector(int(width*0.166), int(width*0.166));
-    }
+    this.smallSize = containerHalfWidth * 0.322;
     this.goneSize = new p5.Vector(0, 0);
     this.bigSize = new p5.Vector (containerHalfWidth*2, height);
     this.actualSize = this.smallSize;
