@@ -181,7 +181,8 @@ div {
     transform: scale(-1, 1);
     z-index: 1000;
     opacity: 0.6;
-    background-image: url('../img/glass-texture.png');
+    /* background-image: url('../img/glass-texture.png'); */
+    /* background-image: url('../img/phonebg/starry1.jpg'); */
     background-size: cover;                      /* <------ */
     background-repeat: no-repeat;
     background-position: center top;
@@ -387,8 +388,9 @@ div {
     position: fixed;
     bottom: 0px;
     left: 50%;
-    background-size: contain;
-    background-image: url("../img/bottom-painted.png");
+    background-color: black;
+    /* background-size: contain;
+    background-image: url("../img/bottom-painted.png"); */
     z-index: 2000;
 }
 
@@ -402,9 +404,10 @@ div {
     top: 0px;
     left: 50%;
     height: 20px;
-    background-size: cover;
+    background-color: black;
+    /* background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../img/bottom-painted.png");
+    background-image: url("../img/bottom-painted.png"); */
     z-index: 2000;
 }
 

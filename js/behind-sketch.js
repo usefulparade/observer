@@ -25,12 +25,16 @@ var statusTime;
 
 var painting1, painting2, painting3;
 
+var glassImg, phonebg;
+
 var canv;
 
 function preload() {
     painting1 = loadImage('./img/painting4.png');
     painting2 = loadImage('./img/painting5.png');
     painting3 = loadImage('./img/bottom-painted.png');
+    glassImg = loadImage('./img/glass-texture-50%.png');
+    phonebg = loadImage('./img/phonebg/droplets.png');
 }
 
 function setup() {
@@ -103,6 +107,8 @@ function draw() {
     imageMode(CENTER);
     //background(0, 0, 0);
     image(vid, halfWidth, halfHeight, vidSize.x, vidSize.y);
+
+    glass();
     //image(painting2, halfWidth, halfHeight, vidSize.x, vidSize.y);
 
     for (i=0;i<icons.length;i++){
@@ -114,8 +120,9 @@ function draw() {
 
     setInterval(doTime, 1000);
 
+    phoneBgDisplay();
     phoneFrame();
-    backgroundPainting();
+    //backgroundPainting();
 }
 
 function windowResized(){
@@ -184,11 +191,14 @@ function phoneFrame(){
     push();
         rectMode(CORNER);
         noStroke();
-        // fill(1,3,15);
-        // rect(0, 0, halfWidth - containerHalfWidth, height);
-        // fill(1,5,9);
-        // rect(halfWidth + containerHalfWidth, 0, halfWidth - containerHalfWidth, height);
-        fill(3,3,12);
+        //LEFT
+        fill(0,0,0);
+        rect(0, 0, halfWidth - containerHalfWidth, height);
+        //RIGHT
+        fill(0,0,0);
+        rect(halfWidth + containerHalfWidth, 0, halfWidth - containerHalfWidth, height);
+        //TOP
+        // fill(3,3,12);
         // rect(halfWidth -containerHalfWidth, 0, halfWidth + containerHalfWidth, 20);
     pop();
 
@@ -198,6 +208,20 @@ function phoneFrame(){
         fill(255,255,255, 210);
         noStroke();
         rect(leftEdge, 20, containerHalfWidth*2, 25);
+    pop();
+}
+
+function phoneBgDisplay(){
+    push();
+        imageMode(CORNER);
+        image(phonebg, (width*0.5 - containerHalfWidth), 10, containerHalfWidth*2, height);
+    pop();
+}
+
+function glass(){
+    push();
+        imageMode(CORNER);
+        image(glassImg, (width*0.5 - containerHalfWidth), 10, containerHalfWidth*2, height);
     pop();
 }
 

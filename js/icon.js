@@ -17,58 +17,67 @@ function Icon(x, y, ind){
     this.easeSpeed = 0.1;
     this.rounded = this.smallSize.x*0.2;
     this.ind = ind;
+    this.opacity = 127;
     this.icon = loadImage('./img/icons/icon' + this.ind + '.png');
     if (this.ind === 0){
-        this.smallColor = color(255, 255, 255, 200);
-        this.bigColor = color(255, 255, 255, 200);
+        this.smallColor = color(255, 255, 255, this.opacity);
+        this.bigColor = color(255, 255, 255, this.opacity);
         this.color = this.smallColor;
+        this.title = 'Music';
     } else if (this.ind === 1){
-        this.smallColor = color(84, 228, 77, 200);
-        this.bigColor = color(255, 255, 255, 200);
+        this.smallColor = color(84, 228, 77, this.opacity);
+        this.bigColor = color(255, 255, 255, this.opacity);
         this.color = this.smallColor;
+        this.title = 'Messages';
     } else if (this.ind === 2){
-        this.smallColor = color(170, 170, 170, 200);
-        this.bigColor = color(255, 255, 255, 200);
+        this.smallColor = color(170, 170, 170,this.opacity);
+        this.bigColor = color(255, 255, 255, this.opacity);
         this.color = this.smallColor;
+        this.title = 'Photos';
     } else if (this.ind === 3){
-        this.smallColor = color(255, 255, 255, 200);
-        this.bigColor = color(255, 255, 255, 200);
+        this.smallColor = color(255, 255, 255, this.opacity);
+        this.bigColor = color(255, 255, 255, this.opacity);
         this.color = this.smallColor;
+        this.title = 'Calendar';
     } else {
-        this.smallColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), 200);
-        this.bigColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), 200);
+        this.smallColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), this.opacity);
+        this.bigColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), this.opacity);
         this.color = this.smallColor;
     }
     
 
     this.show = function(){
         push();
-        rectMode(CENTER);
-        fill(this.color);
-        noStroke();
-        rect(this.actualPos.x, this.actualPos.y, this.actualSize.x, this.actualSize.y, this.rounded);
+            rectMode(CENTER);
+            fill(this.color);
+            noStroke();
+            rect(this.actualPos.x, this.actualPos.y, this.actualSize.x, this.actualSize.y, this.rounded);
 
-        if (this.active){
-            this.grow();
-        } else {
-            this.shrink();
-        }
-
-        if (!this.active && anAppIsActive){
-            this.disappear();
-            this.gone = true;
-        } else {
-            this.gone = false;
-        }
-
-        if (!this.active){
-            if (mouseX > this.initialPos.x - this.smallSize.x*0.5 && mouseX < this.initialPos.x + this.smallSize.x*0.5 && mouseY > this.initialPos.y - this.smallSize.y*0.5 && mouseY < this.initialPos.y + this.smallSize.y*0.5){
-                this.mOver = true;
-            } else {
-                this.mOver = false;
+            if (!anAppIsActive){
+                this.showTitle();
             }
 
-        }
+            if (this.active){
+                this.grow();
+            } else {
+                this.shrink();
+            }
+
+            if (!this.active && anAppIsActive){
+                this.disappear();
+                this.gone = true;
+            } else {
+                this.gone = false;
+            }
+
+            if (!this.active){
+                if (mouseX > this.initialPos.x - this.smallSize.x*0.5 && mouseX < this.initialPos.x + this.smallSize.x*0.5 && mouseY > this.initialPos.y - this.smallSize.y*0.5 && mouseY < this.initialPos.y + this.smallSize.y*0.5){
+                    this.mOver = true;
+                } else {
+                    this.mOver = false;
+                }
+
+            }
         pop();
     }
 
@@ -119,6 +128,16 @@ function Icon(x, y, ind){
             }
             this.disappearChangeEased = constrain(this.easeInOutQuad(constrain(this.disappearChange, 0, 1)), 0, 1);
             this.actualSize = p5.Vector.lerp(this.smallSize, this.goneSize, this.disappearChangeEased);
+    }
+
+    this.showTitle = function(){
+        push();
+            translate(this.actualPos.x, this.actualPos.y + (this.actualSize.y*0.5 + 20));
+            fill(255, 255, 255, this.opacity*1.5);
+            textAlign(CENTER);
+            scale(-1, 1);
+            text(this.title, 0, 0);
+        pop();
     }
 
 
