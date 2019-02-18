@@ -33,7 +33,7 @@ function preload() {
     painting1 = loadImage('./img/painting4.png');
     painting2 = loadImage('./img/painting5.png');
     painting3 = loadImage('./img/bottom-painted.png');
-    glassImg = loadImage('./img/glass-texture-50%.png');
+    glassImg = loadImage('./img/glass-texture-half-opacity.png');
     phonebg = loadImage('./img/phonebg/droplets.png');
 }
 
