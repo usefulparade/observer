@@ -2,22 +2,27 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>OBSERVER</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <style> body {padding: 0; margin: 0;} </style>
     <script src="js/p5.min.js"></script>
+    <script src="js/p5.gif.min.js"></script>
     <script src="js/p5.dom.min.js"></script>
     <script src="js/p5.sound.min.js"></script>
+    <script src="js/extract.js"></script>
     <script src="js/icon.js"></script>
     <script src="js/behind-sketch.js"></script>
     
     
   </head>
   <body>
+    <div class="greyout" id="greyout"></div>
     <div id="canv" class="p5Canvas"></div>
 
+    <!-- <div class="bg-gif"></div> -->
     <div class="mainContainer">
     <div class="status-bar">
       <div class="status-left">
@@ -37,61 +42,51 @@
     </div>
 
       <div class="music">
-          <div class="app-title">
-            <h1>MUSIC</h1>
-          </div>
-    
-          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=4235794114/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/good-sign-bad-sign">Good Sign, Bad Sign by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=1456362300/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/overflowed">Overflowed by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=1621627042/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/craziest-of-treats">Craziest Of Treats by Wistappear</a></iframe>
- 
-          <!-- <iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe> -->
-          <!-- <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3562881284/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/album/knack-for-whatever">Knack For Whatever by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1456362300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/overflowed">Overflowed by Wistappear</a></iframe>
-          <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1621627042/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wistappear.bandcamp.com/track/craziest-of-treats">Craziest Of Treats by Wistappear</a></iframe> -->
-          
+        <a target="_blank" href="https://itunes.apple.com/us/artist/wistappear/1159244095"><img class="app-top" src="img/apps/music.png"></a>
       </div>
 
       <div class="messages">
-          <div class="app-title">
-            <h1>MESSAGES</h1>
-          </div>
-        <div class="a">
-          <p>Hey! We released a new album!</p>
-        </div>
-        <div class="b">
-          <p>Rad :)</p>
-        </div>
-        <div class="a">
-          <p>Oh and also</p>
-          <p>We're playing a show soon</p>
-          <p>2/15 at the Bootleg! 7:00pm</p>
-        </div>
-        <div class="b">
-          <p>yessssss can't wait!!</p>
-        </div>
-                <!-- <p>Wistappear is an LA-based psychadelic re-orientation. Floating on the waves we saw the abandoned boat, as for one instant it tossed and gaped beneath the ship's bows like a chip at the base of a cataract; and then the vast hull rolled over it, and it was seen no more till it came up weltering astern. Again we swam for it, were dashed against it by the seas, and were at last taken up and safely landed on board. Ere the squall came close to, the other boats had cut loose from their fish and returned to the ship in good time. The ship had given us up, but was still cruising, if haply it might light upon some token of our perishing,&mdash;an oar or a lance pole.</p> -->
+        <img class="app-top" src="img/apps/messages.png">
+                <!-- <p></p> -->
       </div>
 
       <div class="media">
-        <div class="app-title">
-          <h1>MEDIA</h1>
-        </div>
-        <div class='photo-tiles'>
-
-          
-        </div>
-        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/mBu4Vsfq0j8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <img class="app-top" src="img/apps/photos.png">
       </div>
 
       <div class="calendar">
-        <div class="app-title">
+          <a target="_blank" href="https://www.songkick.com/artists/7501544"><img class="app-top" src="img/apps/calendar.png"></a>
+        <!-- <div class="app-title">
           <h1>CALENDAR</h1>
         </div>
         <a href="https://www.songkick.com/artists/7501544" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="true" data-background-color="#ffffff">WISTAPPEAR LIVE</a>
-        <script src="//widget.songkick.com/7501544/widget.js"></script>
+        <script src="//widget.songkick.com/7501544/widget.js"></script> -->
       </div>
+
+      <div class="bandcamp">
+          <a target="_blank" href="https://wistappear.bandcamp.com"><img class="app-top" src="img/apps/bandcamp.png"></a>
+      </div>
+
+      <div class="gmail">
+          <a target='_blank' href='mailto:wistappear@gmail.com?Subject=From%20your%20hacked%20phone'><img class="app-top" src="img/apps/gmail.png"></a>
+      </div>
+
+      <div class="soundcloud">
+          <a target="_blank" href="https://soundcloud.com/wistappear"><img class="app-top" src="img/apps/soundcloud.png"></a>
+      </div>
+
+      <div class="spotify">
+          <a target="_blank" href="https://open.spotify.com/artist/5Wyny9RZbWdfTGBDV6r6yz"><img class="app-top" src="img/apps/spotify.png"></a>
+      </div>
+
+      <div class="notes">
+          <img class="app-top" src="img/apps/notes.png">
+      </div>
+
+      <div class="drive">
+          <a target="_blank" href=""><img class="app-top" src="img/apps/drive.png"></a>
+      </div>
+  
 
       
       <!-- <div class="icon">
@@ -121,7 +116,7 @@
           <a target="_blank" href="https://www.instagram.com/wistappear/"><img src="img/icons/ig-logo.png"></a>
         </div>
         <div class="social-media-row-icon">
-          <img src="img/icons/blank-icon.png">
+            <a target="_blank" href="https://www.youtube.com/wistappear/"><img src="img/icons/yt-logo.png"></a>
         </div>
         <div class="social-media-row-icon">
           <img src="img/icons/blank-icon.png">
@@ -139,8 +134,20 @@
     <div class="bottom-black">
       <button class="home-button"></button>
     </div>
+
     
-    </button>
+    <div class="extraction-window" id="extraction">
+      <div id="extraction-header">
+        <span class="close" id="close">&times;</span>
+        <div class="drag"><i class="fas fa-grip-lines"></i></div>
+      </div>
+      <div class="extraction-content" id="extraction-content">
+        <p>[Ian's-iPhone:~ Root$ \useradministrator</p>
+        <p>127.0.0.1 -- internal vision access granted 110th attempt <br>127.0.0.1 -- device no. 4580 <br>127.0.0.1 --  device location 34.0522° N, 118.2437° W</p>
+        <!-- <p>extracting...</p> -->
+        
+      </div>
+    </div>
     
   </body>
 </html>

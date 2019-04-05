@@ -22,7 +22,7 @@
     }
 
     h6 {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -49,7 +49,7 @@
     }
 
     h6 {
-        font-size: 12px;
+        font-size: 8px;
     }
 }
 
@@ -77,6 +77,9 @@
         width: 800px;
         margin-left: -400px;
     }
+    img .app-bottom {
+        bottom: 200px;
+    }
 
     .top-black {
 
@@ -100,6 +103,10 @@
         height: 50px;
         width: 400px;
         margin-left: -200px;
+    }
+
+    img .app-bottom {
+        bottom: 150px;
     }
 
     .top-black {
@@ -148,6 +155,7 @@ p {
 
 body {
     background-color: black;
+    overflow-y: hidden;
 }
 
 div {
@@ -171,6 +179,7 @@ div {
     z-index: 1;
 }
 
+
 .mainContainer{
     display: block;
     position: relative;
@@ -180,12 +189,13 @@ div {
     margin-right: auto;
     transform: scale(-1, 1);
     z-index: 1000;
-    opacity: 0.6;
+    opacity: 0.4;
     /* background-image: url('../img/glass-texture.png'); */
-    /* background-image: url('../img/phonebg/starry1.jpg'); */
-    background-size: cover;                      /* <------ */
+    /* background-image: url('../img/190403_ianloop-newframe1-GIF.gif'); */
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: 50% -100px;
+    overflow-y: hidden;
 }
 
 /* .status-bar {
@@ -246,75 +256,28 @@ div {
 .music {
     display: block;
     position: fixed;
-    margin-top: 35px;
+    margin-top: 25px;
+    left: 0px;
     opacity: 0;
     transform: scale(0);
     width: 100%;
-    height: 75%;
-    overflow-y: scroll;
+    height: 95%;
+    overflow-y: hidden;
     overflow-x: hidden;
     z-index: 1000;
-}
-
-.music iframe {
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    max-width: 75%;
 }
 
 .messages {
     display: block;
     position: fixed;
     margin-top: 25px;
-    left: 5%;
+    left: 0px;
     opacity: 0;
     transform: scale(0);
-    width: 90%;
-    height: 85%;
-    overflow-y: scroll;
+    width: 100%;
+    height: 95%;
+    overflow-y: hidden;
     overflow-x: hidden;
-    z-index: 1000;
-}
-.a {
-    background-color: lightblue;
-    display: block;
-    position: relative;
-    width: 60%;
-    float: right;
-    padding: 10px;
-    margin: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 20px;
-    z-index: 1000;
-    
-}
-.a p {
-    font-size: 18px;
-    text-align: left;
-    z-index: 1000;
-}
-.b {
-    background-color: gray;
-    display: block;
-    position: relative;
-    width: 60%;
-    float: left;
-    padding: 10px;
-    margin: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 0px;
-    z-index: 1000;
-}
-.b p {
-    font-size: 18px;
-    text-align: left;
     z-index: 1000;
 }
 
@@ -322,33 +285,130 @@ div {
     display: block;
     position: fixed;
     margin-top: 25px;
-    left: 5%;
+    left: 0px;
     opacity: 0;
     transform: scale(0);
-    max-width: 90%;
-    max-height: 85%;
+    width: 100%;
+    height: 95%;
     overflow-y: hidden;
     overflow-x: hidden;
     z-index: 1000;
-}
-.media iframe {
-    max-width: 100%;
-    z-index: 1000;
-    overflow: hidden;
 }
 
 .calendar {
     display: block;
     position: fixed;
     margin-top: 25px;
-    left: 5%;
+    left: 0px;
     opacity: 0;
     transform: scale(0);
-    width: 90%;
-    height: 85%;
+    width: 100%;
+    height: 95%;
     overflow-y: hidden;
     overflow-x: hidden;
     z-index: 1000;
+}
+.calendar img {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.app-top {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.app-bottom{
+    position: fixed;
+    max-width: 100%;
+}
+
+.bandcamp {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.gmail {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.soundcloud {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.spotify {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.notes {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+.drive {
+    display: block;
+    position: fixed;
+    margin-top: 25px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+object{
+    width: 100%;
+    height: 100%;
 }
 
 .songkick-widget {
@@ -360,8 +420,12 @@ div {
     display: block;
     position: fixed;
     height: auto;
-    background-image: linear-gradient(rgb(65,65,65), rgb(72, 72, 72), rgb(33, 33, 33));
-    /* background-color: rgb(10, 10, 10); */
+    /* background-image: linear-gradient(rgb(65,65,65), rgb(72, 72, 72), rgb(33, 33, 33)); */
+    /* backdrop-filter: url(commonfilters.svg#filter); */
+    /* backdrop-filter: url(commonfilters.svg#filter) blur(100px); */
+    /* backdrop-filter: blur(10px);  
+    -webkit-backdrop-filter: blur(10px); */
+    background-color: rgba(10, 10, 10, 0.7);
     padding-top: 5px;
     z-index: 1000;
 }
@@ -448,3 +512,103 @@ div {
 .home-button:focus {
     outline: 0;
 }
+
+.extraction-window {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 0px;
+    /* box-shadow: 5px 5px 2px black; */
+    z-index: 5000;
+    overflow: hidden;
+}
+
+#extraction-header {
+    display: block;
+    position: absolute;
+    height: 22px;
+    width: 400px;
+    background-color: white;
+    border-bottom: 5px solid black;
+    cursor: move;
+    z-index: 10;
+    /* background-color: black; */
+}
+
+.greyout {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5000;
+}
+
+.extraction-content {
+    display: block;
+    position: absolute;
+    max-width: 380px;
+    height: 278px;
+    top: 27px;
+    border-radius: 0px;
+    z-index: 6000;
+    padding-left: 10px;
+    padding-top: 12px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    overflow: auto;
+}
+
+.extraction-content p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    margin: 0px;
+}
+
+.extraction-content .extractedP {
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: lighter;
+    transition: 0.3s;
+    z-index: 10000;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #extraction-header .drag {
+    position: absolute;
+    top: 2px;
+    left: 190px;
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+@media only screen and (max-width: 700px){
+    .extraction-window{
+        max-width: 75%;
+        left: 20px;
+    }
+
+    #extraction-header .drag {
+        left: 120px;
+    }
+  }
