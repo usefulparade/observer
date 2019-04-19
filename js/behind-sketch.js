@@ -190,9 +190,13 @@ function setup() {
 }
 
 function draw() {
+    background(0,0,0);
+    
     dragElement(document.getElementById("extraction"));
     strokeWeight(5);
+    behindVideoText();
     imageMode(CENTER);
+    
     push();
         translate(halfWidth, halfHeight);
         rotate(HALF_PI);
@@ -568,6 +572,18 @@ function bufferLoop(){
         extractedP.html(extractedPString);
     }
 
+}
+
+function behindVideoText(){
+    push();
+        translate(width*0.5, height*0.5);
+        noStroke();
+        fill(255, 255, 255);
+        textAlign(CENTER);
+        scale(1, 1);
+        textSize(icons[0].textSize);
+        text("127.0.0.1 --  extracting internal vision access", 0, 0);
+    pop();
 }
 
 function dragElement(elmnt) {
