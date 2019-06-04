@@ -173,9 +173,9 @@ function setup() {
     //SPOTIFY
     originalTexts[7] = "> <b>SPOTIFY</b><br>127.0.0.1 -- extracting... <br>> Stream Wistappear on<br>> <a target='_blank' href='https://open.spotify.com/artist/5Wyny9RZbWdfTGBDV6r6yz'>spotify</a><br>127.0.0.1 -- extraction complete<br>>";
     //NOTES
-    originalTexts[8] = "> <b>NOTES</b><br>127.0.0.1 -- extracting... <br>> Wistappear is an LA-based psychadelic re-orientation.<br>> <a target='_blank' href='www.lukewilliamsmusic.com'>A Useful Parade site.</a><br>127.0.0.1 --  extraction complete<br>>";
+    originalTexts[8] = "> <b>NOTES</b><br>127.0.0.1 -- extracting... <br>> Wistappear is an LA-based psychadelic re-orientation.<br>> <a target='_blank' href='http://www.usefulparade.com'>A Useful Parade site.</a><br>127.0.0.1 --  extraction complete<br>>";
     //DRIVE
-    originalTexts[9] = "> <b>GOOGLE DRIVE</b><br>127.0.0.1 -- extracting... <br>> a presskit for the band Wistappear <br>> was found in <a target='_blank' href=''>this</a> google drive folder<br>127.0.0.1 --  extraction complete<br>>";
+    originalTexts[9] = "> <b>GOOGLE DRIVE</b><br>127.0.0.1 -- extracting... <br>> a presskit for the band Wistappear <br>> was found in <a target='_blank' href='https://drive.google.com/open?id=1lRP2J8xsOSQ6tQWGj_0fN20X6DwlP_h7'>this</a> google drive folder<br>127.0.0.1 --  extraction complete<br>>";
 
     for (i=0;i<originalTexts.length;i++){
         splitTexts[i] = originalTexts[i].split("");
