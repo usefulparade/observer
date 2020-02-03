@@ -155,7 +155,7 @@ p {
 
 body {
     background-color: black;
-    overflow-y: hidden;
+    overflow: hidden;
     height: 100%;
 }
 
@@ -183,7 +183,7 @@ div {
 
 .mainContainer{
     display: block;
-    position: fixed;
+    position: relative;
     max-width: 0px;
     height: 100%;
     margin-left: auto;
