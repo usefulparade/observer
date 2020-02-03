@@ -50,7 +50,7 @@ function preload() {
     painting3 = loadImage('./img/bottom-painted.png');
     glassImg = loadImage('./img/glass-texture-half-opacity.png');
     phonebg = loadImage('./img/phonebg/droplets.png');
-    gifLoad = createImg('./img/190403_ianloop-newframe1-GIF.gif');
+    // gifLoad = createImg('./img/190403_ianloop-newframe1-GIF.gif');
 }
 
 function setup() {

@@ -156,6 +156,7 @@ p {
 body {
     background-color: black;
     overflow-y: hidden;
+    height: 100%;
 }
 
 div {
@@ -182,7 +183,7 @@ div {
 
 .mainContainer{
     display: block;
-    position: relative;
+    position: fixed;
     max-width: 0px;
     height: 100%;
     margin-left: auto;
@@ -190,8 +191,6 @@ div {
     transform: scale(-1, 1);
     z-index: 1000;
     opacity: 0.4;
-    /* background-image: url('../img/glass-texture.png'); */
-    /* background-image: url('../img/190403_ianloop-newframe1-GIF.gif'); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 50% -100px;
